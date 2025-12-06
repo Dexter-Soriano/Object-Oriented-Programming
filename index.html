@@ -106,6 +106,12 @@
       margin: 1rem auto 2rem;
     }
 
+    /* --- Fade effect for rotating image --- */
+    #profilePic {
+      opacity: 1;
+      transition: opacity 0.8s ease-in-out;
+    }
+
     ul {
       list-style: none;
       padding-left: 0;
@@ -214,9 +220,10 @@
   <!-- Main Content -->
   <main>
 
+    <!-- About Me Section -->
     <section id="about" data-aos="fade-up">
       <h2>About Me 🙈</h2>
-      <img src="481980789_1845726369538766_4604718138116937140_n.jpg" alt="Dexter Photo">
+      <img id="profilePic" src="481980789_1845726369538766_4604718138116937140_n.jpg" alt="Dexter Photo">
       <p>
         I'm <strong>Dexter</strong>, or you can also call me as "<strong>Dekdek</strong>", 20 years old and I live in Brgy. Balibago, Angeles City.
         I love cooking, exploring, playing online games, listening to music, watching and reading.
@@ -309,6 +316,28 @@
     </div>
     <p>© Thankyou for visiting...</p>
   </footer>
+
+  <!-- Image Rotation Script -->
+  <script>
+    const images = [
+      "481980789_1845726369538766_4604718138116937140_n.jpg",
+      "462538172_2043288819440356_817723996674935003_n.jpg",
+      "6c57fe67-a60a-4e60-8fe4-d08451ca9af7.jpg"
+    ];
+
+    let index = 0;
+    const imgElement = document.getElementById("profilePic");
+
+    setInterval(() => {
+      imgElement.style.opacity = 0; // fade out
+
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        imgElement.src = images[index];
+        imgElement.style.opacity = 1; // fade in
+      }, 800);
+    }, 3000);
+  </script>
 
   <!-- AOS Animation Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
