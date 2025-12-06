@@ -67,7 +67,11 @@ I’m always eager to **learn, support**, and become a better version of myself 
 
 ## 📑FINAL
 - 🧪 **Final Lab Task 1:** [View File](FinalLabTask1.pdf)
-- - 🧪 **Final Lab Task 5:** [View File](FinalLabTask5.pdf)
+- 🧪 **Final Lab Task 2:** [View File](FinalLabTask2.pdf)
+- 🧪 **Final Lab Task 3:** [View File](FinalLabTask3.pdf)
+- 🧪 **Final Lab Task 4:** [View File](FinalLabTask4.pdf)
+- 🧪 **Final Lab Task 5:** [View File](FinalLabTask5.pdf)
+- 🧪 **Final Lab Task 6:** [View File](FinalLabTask6.pdf)
 
 
 
