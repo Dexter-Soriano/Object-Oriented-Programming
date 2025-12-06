@@ -1,140 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dexter’s OOP Portfolio 💻</title>
 
-<title>Dexter’s OOP Portfolio 💻</title>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<!--=============== BOXICONS ===============-->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-<!--=============== SWIPER CSS ===============-->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-
-<!--=============== CSS ===============-->
-<style>
+  <style>
     /* --- Global Styles --- */
-    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-    body { font-family: "Poppins", "Segoe UI", sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+      margin: 0;
+      line-height: 1.8;
+    }
 
     /* --- Header --- */
-    .header { 
-        background: linear-gradient(135deg, #3b82f6, #6366f1); 
-        color: white; text-align: center; padding: 4rem 1rem 2rem; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;
-        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+    header {
+      text-align: center;
+      background: linear-gradient(135deg,#3b82f6,#6366f1);
+      color: white;
+      padding: 3rem 1rem;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
     }
-    .header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-    .header p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 1rem;
+    }
+
+    header h1 { font-size: 2.5rem; margin: 0.3rem 0; }
+    header p { margin: 0.3rem 0; opacity: 0.9; }
+
+    /* --- Navigation Bar --- */
+    nav {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #2563eb; }
 
     /* --- Sections --- */
-    .section { max-width: 900px; margin: 3rem auto; padding: 2.5rem; background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .section:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15); }
-    h2 { color: #2563eb; margin-bottom: 1rem; font-size: 2rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
-    p, li { font-size: 1.1rem; color: #334155; margin-bottom: 1rem; }
-    ul { list-style: none; padding-left: 0; }
-    li { margin-bottom: 0.7rem; }
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-    /* --- Profile Image --- */
-    #profilePic { border-radius: 50%; width: 160px; border: 4px solid #3b82f6; display: block; margin: 1.5rem auto 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: opacity 0.8s ease-in-out, transform 0.3s; }
-    #profilePic:hover { transform: scale(1.05); }
+    section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(37,99,235,0.2);
+    }
 
-    /* --- Contact / Footer --- */
-    .footer { background: linear-gradient(135deg, #3b82f6, #6366f1); color: white; text-align: center; padding: 2.5rem 1rem; border-top-left-radius: 30px; border-top-right-radius: 30px; margin-top: 3rem; }
-    .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 1rem; }
-    .social-links a { width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: transform 0.3s, background 0.3s; }
-    .social-links a:hover { transform: scale(1.15); background: #dbeafe; }
+    h2 { color: #2563eb; border-bottom: 3px solid #e2e8f0; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.8rem; }
+    h3 { color: #3b82f6; margin-top: 1rem; }
+    p { font-size: 1.1rem; color: #334155; text-align: justify; }
+    ul { list-style: none; padding-left: 0; font-size: 1.05rem; }
+    li { margin: 0.6rem 0; }
+
+    img.badge { margin: 0 5px; }
+
+    /* --- Footer --- */
+    footer {
+      background: linear-gradient(135deg,#3b82f6,#6366f1);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin-top: 5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .social-links a:hover { transform: scale(1.1); background: #dbeafe; }
     .social-links img { width: 24px; }
-    .footer p { opacity: 0.85; }
+    footer p { font-size: 0.95rem; opacity: 0.9; }
 
     /* --- Responsive --- */
     @media (max-width: 700px) {
-        .header h1 { font-size: 2rem; }
-        .section { margin: 2rem 1rem; padding: 2rem; }
+      header h1 { font-size: 2rem; }
+      section { margin: 2rem 1rem; padding: 2rem 1.5rem; }
     }
-</style>
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="header" id="header">
-    <h1>Object-Oriented Programming 💻</h1>
-    <p>Welcome to my OOP portfolio where I share my skills, projects, and fun facts about me!</p>
-</header>
+  <!-- Header -->
+  <header data-aos="fade-down">
+    <img src="481980789_1845726369538766_4604718138116937140_n.jpg" alt="Dexter Photo">
+    <h1>Dexter Soriano</h1>
+    <p>BS Computer Science Student</p>
+    <p>City College of Angeles</p>
+    <p>Focus: Python, Object-Oriented Programming</p>
+    <p>Email: dsoriano24-0469@cca.edu.ph</p>
+  </header>
 
-<!-- Main -->
-<main class="main">
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#interests">Interests</a>
+    <a href="#languages">Languages</a>
+    <a href="#projects">Projects</a>
+    <a href="#fun-facts">Fun Facts</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- About Me -->
-    <section class="about section" id="about">
-        <h2>About Me 🙈</h2>
-        <img id="profilePic" src="481980789_1845726369538766_4604718138116937140_n.jpg" alt="Dexter Photo">
-        <p>I'm <strong>Dexter</strong> (aka "Dekdek"), 20 years old, living in Angeles City. I enjoy cooking, gaming, reading, and learning new programming skills to grow as a developer.</p>
+  <!-- Sections -->
+  <main>
+    <section id="about" data-aos="fade-up">
+      <h2>About Me 🙈</h2>
+      <p>
+        I'm <strong>Dexter</strong>, also known as "<strong>Dekdek</strong>", 20 years old, living in Brgy. Balibago, Angeles City. I love cooking, exploring, playing online games, listening to music, watching and reading, and I'm always excited to learn new things to achieve my goals and become a better programmer soon.
+      </p>
     </section>
 
-    <!-- Skills -->
-    <section class="skills section" id="skills">
-        <h2>🧠 Skills</h2>
-        <ul>
-            <li>🧩 Problem Solving</li>
-            <li>🤗 Empathy</li>
-            <li>👂 Good Listening</li>
-            <li>🔍 Critical Thinking</li>
-            <li>🤝 Teamwork</li>
-            <li>💫 Stewardship</li>
-        </ul>
+    <section id="education" data-aos="fade-up">
+      <h2>🎓 Education</h2>
+      <ul>
+        <li>Angeles City National Trade School (SHS, 2022-2024) - Technical Vocational Livelihood</li>
+        <li>Angeles City National Trade School (JHS, 2018-2022)</li>
+      </ul>
     </section>
 
-    <!-- Midterm / Work -->
-    <section class="work section" id="work">
-        <h2>📝 Midterm & Final Tasks</h2>
-        <ul>
-            <li>🧪 <a href="MidTermLabTask1.pdf" target="_blank">Midterm Lab Task 1</a></li>
-            <li>🧪 <a href="MidTermLabTask2.pdf" target="_blank">Midterm Lab Task 2</a></li>
-            <li>🧪 <a href="MLabTask3.pdf" target="_blank">Midterm Lab Task 3</a></li>
-            <li>🧪 <a href="FinalLabTask1.pdf" target="_blank">Final Lab Task 1</a></li>
-            <li>🧪 <a href="FinalLabTask2.pdf" target="_blank">Final Lab Task 2</a></li>
-        </ul>
+    <section id="interests" data-aos="fade-up">
+      <h2>🎨 Area of Interest</h2>
+      <h3>Movies & Series</h3>
+      <ul>
+        <li>Animation / Anime</li>
+        <li>Horror / Psychological thrillers</li>
+        <li>Fantasy / Adventure & world-building</li>
+      </ul>
+      <h3>Cooking & Baking</h3>
+      <ul>
+        <li>Experimenting with recipes</li>
+        <li>Watching cooking tutorials</li>
+        <li>Making desserts like brownies and cookies</li>
+      </ul>
     </section>
 
-    <!-- Contact -->
-    <section class="contact section" id="contact">
-        <h2>📬 Contact Me</h2>
-        <div class="social-links">
-            <a href="https://www.facebook.com/Dex.Bay27" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-            <a href="mailto:dsoriano24-0469@cca.edu.ph"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
-            <a href="https://github.com/dexter-soriano" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
-        </div>
-        <p>© Thank you for visiting...</p>
+    <section id="languages" data-aos="fade-up">
+      <h2>📚 Languages I Used Before</h2>
+      <div style="text-align:center;">
+        <img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white" class="badge" alt="Python Badge">
+        <img src="https://img.shields.io/badge/C-00599C.svg?style=for-the-badge&logo=c&logoColor=white" class="badge" alt="C Badge">
+        <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" class="badge" alt="Java Badge">
+      </div>
     </section>
 
-</main>
+    <section id="projects" data-aos="fade-up">
+      <h2>📝 Projects</h2>
+      <h3>Midterm Tasks</h3>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1XftQKxotqrKBoReYY3T-T9W1uEZFHDUe/view?usp=sharing" target="_blank">Midterm Lab Task 1</a></li>
+        <li><a href="MidTermLabTask2.pdf" target="_blank">Midterm Lab Task 2</a></li>
+        <li><a href="MLabTask3.pdf" target="_blank">Midterm Lab Task 3</a></li>
+        <li><a href="MtermLabTask4.pdf" target="_blank">Midterm Lab Task 4</a></li>
+        <li><a href="MtermTaskLab5.pdf" target="_blank">Midterm Lab Task 5</a></li>
+      </ul>
+      <h3>Final Tasks</h3>
+      <ul>
+        <li><a href="FinalLabTask1.pdf" target="_blank">Final Lab Task 1</a></li>
+        <li><a href="FinalLabTask2.pdf" target="_blank">Final Lab Task 2</a></li>
+        <li><a href="FinalLabTask3.pdf" target="_blank">Final Lab Task 3</a></li>
+        <li><a href="FinalLabTask4.pdf" target="_blank">Final Lab Task 4</a></li>
+        <li><a href="FinalLabTask5.pdf" target="_blank">Final Lab Task 5</a></li>
+        <li><a href="FinalLabTask6.pdf" target="_blank">Final Lab Task 6</a></li>
+      </ul>
+    </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <p>© Dexter Soriano - OOP Portfolio</p>
-</footer>
+    <section id="fun-facts" data-aos="fade-up">
+      <h2>😄 Fun Facts About Me</h2>
+      <ul>
+        <li>I take notes but sometimes forget where I put them.</li>
+        <li>I smile a lot because it makes me feel better.</li>
+        <li>I check my phone too much, even when I don’t need to.</li>
+        <li>I carry way too many things in my backpack.</li>
+        <li>I borrow books from the library and sometimes forget to return them.</li>
+        <li>I celebrate finishing small tasks like I won in life.</li>
+      </ul>
+    </section>
+  </main>
 
-<!-- Rotating Profile Image Script -->
-<script>
-const images = [
-  "481980789_1845726369538766_4604718138116937140_n.jpg",
-  "462538172_2043288819440356_817723996674935003_n.jpg",
-  "6c57fe67-a60a-4e60-8fe4-d08451ca9af7.jpg"
-];
+  <!-- Footer -->
+  <footer id="contact" data-aos="fade-up">
+    <h2>📬 Contact Me</h2>
+    <div class="social-links">
+      <a href="https://www.facebook.com/Dex.Bay27" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="mailto:dsoriano24-0469@cca.edu.ph" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      </a>
+      <a href="https://github.com/dexter-soriano" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      </a>
+    </div>
+    <p>© Thank you for visiting...</p>
+  </footer>
 
-let index = 0;
-const imgElement = document.getElementById("profilePic");
-
-setInterval(() => {
-  imgElement.style.opacity = 0;
-  setTimeout(() => {
-    index = (index + 1) % images.length;
-    imgElement.src = images[index];
-    imgElement.style.opacity = 1;
-  }, 800);
-}, 3000);
-</script>
-
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
 </body>
 </html>
