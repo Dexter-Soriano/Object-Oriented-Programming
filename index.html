@@ -31,6 +31,7 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color:var(--white-soft);
       background:
+        /* subtle animated doodle SVG (white-ish) */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1.8'%3E%3Cpath d='M12 22c18-8 36 8 54 0s36-8 54 0 36 8 54 0'/%3E%3Cpath d='M24 180c20-26 52 10 80-6s60-42 92-12'/%3E%3Ccircle cx='190' cy='40' r='6'/%3E%3Ccircle cx='40' cy='60' r='4'/%3E%3C/g%3E%3C/svg%3E"),
         linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
       background-size: 480px, cover;
@@ -248,35 +249,6 @@
       filter: blur(28px);
       pointer-events:none;
     }
-
-    /* ===== AUTO SLIDESHOW ===== */
-    .slider {
-      width: 100%;
-      max-width: 700px;
-      height: 350px;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .slides {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      animation: slide 9s infinite;
-    }
-    .slides img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    @keyframes slide {
-      0% { margin-left: 0; }
-      30% { margin-left: 0; }
-      33% { margin-left: -100%; }
-      63% { margin-left: -100%; }
-      66% { margin-left: -200%; }
-      96% { margin-left: -200%; }
-    }
   </style>
 </head>
 <body>
@@ -301,15 +273,6 @@
         <a class="btn secondary" href="#" title="Open portfolio">Portfolio</a>
       </div>
     </header>
-
-    <!-- AUTO SLIDESHOW -->
-    <div class="slider">
-      <div class="slides">
-        <img src="https://picsum.photos/800/400?random=1" alt="">
-        <img src="https://picsum.photos/800/400?random=2" alt="">
-        <img src="https://picsum.photos/800/400?random=3" alt="">
-      </div>
-    </div>
 
     <div class="grid">
       <!-- MAIN COLUMN -->
@@ -350,4 +313,121 @@
         </section>
 
         <!-- SKILLS -->
-        <!-- (rest of your code remains unchanged) -->
+        <section class="card" style="margin-top:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="accent-line" aria-hidden="true"></div>
+              <h2 class="section">Skills & Tools</h2>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Soft + Technical</div>
+          </div>
+
+          <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+            <div style="flex:1;min-width:220px">
+              <h3 style="margin:0 0 8px 0;font-size:13px">Core Skills</h3>
+              <div class="skills-grid">
+                <div class="skill">Problem Solving</div>
+                <div class="skill">Empathy</div>
+                <div class="skill">Critical Thinking</div>
+                <div class="skill">Teamwork</div>
+                <div class="skill">Good Listener</div>
+                <div class="skill">Stewardship</div>
+              </div>
+            </div>
+
+            <div style="width:220px">
+              <h3 style="margin:0 0 8px 0;font-size:13px">Languages</h3>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python" style="width:100%;border-radius:8px">
+                <img src="https://img.shields.io/badge/C-00599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C" style="width:100%;border-radius:8px">
+                <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" style="width:100%;border-radius:8px">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS / MIDTERM & FINAL -->
+        <section class="card" style="margin-top:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="accent-line"></div>
+              <h2 class="section">Projects & Labs</h2>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Midterm & Final</div>
+          </div>
+
+          <p style="color:var(--muted);margin-top:8px">Click a link to view each lab task (some open in Google Drive or are local files).</p>
+
+          <div class="pdf-list" style="margin-top:10px">
+            <a href="https://drive.google.com/file/d/1XftQKxotqrKBoReYY3T-T9W1uEZFHDUe/view?usp=sharing" target="_blank" class="underline">Midterm Lab Task 1 — Google Drive</a>
+            <a href="MidTermLabTask2.pdf" class="underline">Midterm Lab Task 2 (MidTermLabTask2.pdf)</a>
+            <a href="./MLabTask3.pdf" class="underline">Midterm Lab Task 3 (MLabTask3.pdf)</a>
+            <a href="MtermLabTask4.pdf" class="underline">Midterm Lab Task 4</a>
+            <a href="MtermTaskLab5.pdf" class="underline">Midterm Lab Task 5</a>
+            <hr style="border:none;border-top:1px dashed rgba(255,255,255,0.04);margin:12px 0">
+            <a href="FinalLabTask1.pdf" class="underline">Final Lab Task 1</a>
+            <a href="FinalLabTask2.pdf" class="underline">Final Lab Task 2</a>
+            <a href="FinalLabTask3.pdf" class="underline">Final Lab Task 3</a>
+            <a href="FinalLabTask4.pdf" class="underline">Final Lab Task 4</a>
+            <a href="FinalLabTask5.pdf" class="underline">Final Lab Task 5</a>
+            <a href="FinalLabTask6.pdf" class="underline">Final Lab Task 6</a>
+          </div>
+        </section>
+
+        <!-- CODE SNIPPET (decorative) -->
+        <section class="card" style="margin-top:16px">
+          <h2 class="section"><div class="accent-line"></div>Small Demo</h2>
+          <div class="code-card" aria-hidden="false" title="Example pseudocode">
+<pre>// Example: simple class in Java-like pseudocode
+class Student {
+  String name = "Dexter";
+  int age = 20;
+  void introduce() {
+    System.out.println("Hi! I'm " + name + ", a student learning OOP.");
+  }
+}</pre>
+          </div>
+        </section>
+      </main>
+
+      <!-- RIGHT COLUMN / ASIDE -->
+      <aside>
+        <!-- CONTACT CARD -->
+        <div class="card contact">
+          <h2 class="section"><div class="accent-line"></div>Contact</h2>
+          <p class="sub">Brgy. Balibago, Angeles City</p>
+          <p class="sub">Age: 20</p>
+          <div style="margin-top:10px">
+            <a class="underline" href="#" title="GitHub">GitHub Repository</a><br>
+            <a class="underline" href="#" title="Portfolio">Portfolio / Projects</a>
+          </div>
+        </div>
+
+        <!-- EDUCATION CARD -->
+        <div class="card">
+          <h2 class="section"><div class="accent-line"></div>Education</h2>
+          <ul style="margin:8px 0 0 1.05rem;color:var(--muted)">
+            <li><strong>Senior High School:</strong> Rafael L. Lazatin Memorial High School — HUMSS</li>
+            <li><strong>Junior High School:</strong> Rafael L. Lazatin Memorial High School</li>
+            <li><strong>Elementary:</strong> Gueco Balibago Elementary School</li>
+          </ul>
+        </div>
+
+        <!-- WANT TO MODIFY -->
+        <div class="card">
+          <h2 class="section"><div class="accent-line"></div>Want to modify?</h2>
+          <p class="sub" style="margin-top:8px">If you want changes — different colors, layout, or export to README.md — I can update the HTML for you.</p>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn secondary" href="#">Request edits</a>
+            <a class="btn" href="#">Download README</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="foot">
+      Made with ❤️ by Dexter — Object Oriented Programming repository
+    </footer>
+  </div>
+</body>
+</html>
