@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3">
+    <title>Image Slideshow</title>
+    <style>
+        img {
+            width: 500px;
+            height: 300px;
+            display: none;
+        }
+        img:first-child {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+</body>
+</html>
 
